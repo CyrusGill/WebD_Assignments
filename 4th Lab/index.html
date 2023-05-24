@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Example</title>
+    </head>
+
+    <body>
+        <h1>This is JavaScript Example.</h1>
+        <h2 id="result"> Welcome to Web Development <span id="name"></span>.</h2>
+        <h3>SU-20-01-001-005</h3>
+        <br>
+        <form name="form1">
+            <h2>Print table of any number upto any range.</h2>
+            <h3>Enter the number.</h3>
+            <input type="text" name="number">
+            <h3>Enter the range for the table.</h3>
+            <input type="text" name="range">
+            <br> <br>
+            <input type="button" value="Print table" onclick="fcall()">
+        </form>
+
+        <script>
+            document.getElementById("name").innerHTML = "Cyrus";
+
+            function fcall()
+            {
+                n = document.form1.number.value;
+                r = document.form1.range.value;
+                var b = 0;
+                var a = 1;
+                for (a=1; a<=r; a++)
+                {
+                    b = n*a;
+                    document.write(n+" x "+a+" = " +b+"<br>");
+                }
+                alert (n+"'s table will be printed up to "+r)
+            }
+        </script>    
+    </body>
+</html>
