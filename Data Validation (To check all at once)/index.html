@@ -3,41 +3,51 @@
     <head>
         <title>Data Validation Form</title>
         
+        <style>
+            /* body{
+                background-color: rgb(33, 45, 218);
+                color: white;
+            } */
+        </style>
+
         <script>
             
-            function checkID(){
+            function checkall(){
                 var data=document.getElementById("cnic").value;
-                const pattern=/\d{5}-\d{7}-\d{1}/;
-                if (pattern.test(data)){
+                const cnicptrn=/\d{5}-\d{7}-\d{1}/;
+                if (cnicptrn.test(data)){
                     alert("Your CNIC is Valid.");
                 }
                 else{
                     alert("Your CNIC is NOT Valid.");
                 }
-            }
 
-            function checkEmail(){
                 var data=document.getElementById("email").value;
-                const pattern=/\w+@\w+.\w{3}/;
-                if (pattern.test(data)){
+                const emailptrn=/\w+@\w+.\w{3}/;
+                if (emailptrn.test(data)){
                     alert("Your E-mail is Valid.");
                 }
                 else{
                     alert("Your E-mail is NOT Valid.");
                 }
-            }
 
-            function checkReg(){
                 var data=document.getElementById("reg").value;
-                const pattern=/SU-\d{2}-\d{2}-\d{3}-\d{3}/;
-                const pattern2=/su-\d{2}-\d{2}-\d{3}-\d{3}/;
-                if (pattern.test(data) || pattern2.test(data)){
+                const regptrn1=/SU-\d{2}-\d{2}-\d{3}-\d{3}/;
+                const regptrn2=/su-\d{2}-\d{2}-\d{3}-\d{3}/;
+                if (regptrn1.test(data) || regptrn2.test(data)){
                     alert("Your Registration Number is Valid.");
                 }
                 else{
                     alert("Your Registration Number is NOT Valid.");
                 }
             }
+
+            // function checkEmail(){
+                
+            // }
+
+            // function checkReg(){
+            // }
 
         </script>
     </head>
@@ -47,13 +57,13 @@
     
         <form>
             <input type="text" id="cnic" placeholder="Enter your CNIC"> <br><br>
-            <button onclick=checkID()>Check CNIC</button> <br><br><br>
+            <!-- <button onclick=checkID()>Check CNIC</button> <br><br><br> -->
 
             <input type="text" id="email" placeholder="Enter your E-mail"> <br><br>
-            <button onclick=checkEmail()>Check E-mail</button> <br><br><br>
+            <!-- <button onclick=checkEmail()>Check E-mail</button> <br><br><br> -->
 
             <input type="text" id="reg" placeholder="Enter your Reg. No."> <br><br>
-            <button onclick=checkReg()>Check Reg. No.</button>
+            <button onclick=checkall()>Check All</button>
         </form>
     </body>
 </html>
